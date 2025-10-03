@@ -143,8 +143,8 @@ export const jigglyap = {
   currentImage: null,
   singImages: [],
   angryImages: [],
-  singAudio: new Audio("../assets/audio/jp-singing.mp3"),
-  angryAudio: new Audio("../assets/audio/jp-angry.mp3")
+  singAudio: new Audio("/assets/audio/jp-singing.mp3"),
+  angryAudio: new Audio("/assets/audio/jp-angry.mp3")
 };
 
 
@@ -156,31 +156,31 @@ export function loadJigglyapFrames() {
 
   sideFiles.forEach(file => {
     const img = new Image();
-    img.src = `../assets/jp/${file}`;
+    img.src = `/assets/jp/${file}`;
     jigglyap.frames.side.push(img);
   });
   frontFiles.forEach(file => {
     const img = new Image();
-    img.src = `../assets/jp/${file}`;
+    img.src = `/assets/jp/${file}`;
     jigglyap.frames.front.push(img);
   });
   backFiles.forEach(file => {
     const img = new Image();
-    img.src = `../assets/jp/${file}`;
+    img.src = `/assets/jp/${file}`;
     jigglyap.frames.back.push(img);
   });
 
    // Angry frames
   ["jp-angry-a-clean.png","jp-angry-b-clean.png"].forEach(file => {
     const img = new Image();
-    img.src = `../assets/jp/${file}`;
+    img.src = `/assets/jp/${file}`;
     jigglyap.frames.angry.push(img);
   });
 
   // Singing frames
   ["jp-sing-a-clean.png","jp-sing-b-clean.png"].forEach(file => {
     const img = new Image();
-    img.src = `../assets/jp/${file}`;
+    img.src = `/assets/jp/${file}`;
     jigglyap.frames.sing.push(img);
   });
 }
@@ -303,7 +303,7 @@ export const jigglyapDialogue = {
   yOffset: -160
 };
 
-const jigglyapAudio = new Audio("../assets/audio/talking-sound.mp3");
+const jigglyapAudio = new Audio("/assets/audio/talking-sound.mp3");
 jigglyapAudio.loop = true;
 
 export function foundJigglyapDialogue() {
@@ -519,4 +519,5 @@ function roundRect(ctx, x, y, width, height, radius, fill, stroke) {
   if (fill) ctx.fill();
   if (stroke) ctx.stroke();
 }
+
 
