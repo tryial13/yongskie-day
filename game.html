@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Yongski Day!</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <canvas id="gameCanvas"></canvas>
+
+    <div id="dialogBox" class="dialog-box"></div>
+
+    <!-- 🎵 Audio -->
+    <audio
+      id="gameMusic"
+      src="assets/audio/game-music.mp3"
+      loop
+      autoplay
+    ></audio>
+
+    <!-- 🎛 Music Controls -->
+    <div class="music-controls">
+      <button id="muteBtn">🔊</button>
+      <button id="volDown">➖</button>
+      <button id="volUp">➕</button>
+      <button id="exitBtn">🚪 Exit</button>
+    </div>
+
+    <!-- Notes Icon -->
+    <div id="notesIcon">📝</div>
+
+    <!-- Notes Modal -->
+    <div id="notesModal">
+      <h1>My Notes</h1>
+      <h2>
+        Hey Snordax! Looks like your house is locked and your key is missing.
+        Don’t worry—you tend to forget things sometimes, so here’s a handy list
+        to keep you on track!
+      </h2>
+      <ol id="missionList"></ol>
+      <button id="closeNotes">Close</button>
+    </div>
+
+    <div id="statusBox" class="status-box">
+      <div class="status-title">Snordax's Health Meter</div>
+      <div class="meter">
+        <label>😴 Sleepy</label>
+        <div class="bar sleepy"><div class="fill" id="sleepyFill"></div></div>
+      </div>
+      <div class="meter">
+        <label>🍗 Hungry</label>
+        <div class="bar hungry"><div class="fill" id="hungryFill"></div></div>
+      </div>
+      <div id="statusMessage"></div>
+    </div>
+
+    <script type="module" src="/js/script.js"></script>
+  </body>
+</html>

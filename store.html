@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Yongski Day!</title>
+
+    <!-- Link to the area-specific CSS -->
+    <link rel="stylesheet" href="css/style-area.css" />
+  </head>
+  <body id="page-body">
+    <!-- Back to map button -->
+    <button id="back-btn">← Back to Map</button>
+
+    <!-- Background -->
+    <img id="bg" src="assets/store/store.png" alt="Store Background" />
+
+    <!-- Character -->
+    <img
+      id="character"
+      src="assets/store/store-owner-a-clean.png"
+      alt="Store Owner"
+    />
+
+    <!-- Dialogue box -->
+    <div id="dialogue-box">
+      <p id="dialogue-text"></p>
+      <button id="next-btn">Next →</button>
+    </div>
+
+    <!-- Modal -->
+    <div id="modal-overlay"></div>
+    <div id="modal">
+      <div id="modal-header">
+        <h2 id="modal-title"></h2>
+        <p id="modal-subtitle"></p>
+      </div>
+      <div id="modal-content">
+        <video id="modal-video" controls></video>
+        <img id="modal-img" />
+      </div>
+      <button id="modal-close">Close ✕</button>
+    </div>
+
+    <script type="module" src="js/area.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+  </body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Game Login</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      body {
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #1e90ff;
+        font-family: "Press Start 2P", monospace, Arial, sans-serif;
+      }
+
+      .login-container {
+        text-align: center;
+      }
+
+      h1 {
+        font-weight: bold;
+        color: white;
+        margin-bottom: 20px;
+      }
+
+      input[type="password"] {
+        padding: 10px;
+        width: 200px;
+        border: none;
+        border-radius: 6px;
+        outline: none;
+        font-size: 16px;
+      }
+
+      #error {
+        height: 18px;
+        margin-top: 5px;
+        color: yellow;
+        font-size: 14px;
+      }
+
+      button {
+        margin-top: 15px;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 6px;
+        background-color: white;
+        color: #1e90ff;
+        font-weight: bold;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: #f0f0f0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="login-container">
+      <h1>Enter Password</h1>
+      <input type="password" id="password" placeholder="Password" />
+      <p id="error"></p>
+      <button onclick="checkPassword()">Enter</button>
+    </div>
+
+    <script>
+      function checkPassword() {
+        const input = document.getElementById("password").value;
+        const correctPassword = "snordaks7";
+        if (input === correctPassword) {
+          window.location.href = "game.html";
+        } else {
+          document.getElementById("error").innerText = "Wrong password!";
+        }
+      }
+
+      // Always clear previous game state when opening login
+      localStorage.removeItem("gameState");
+    </script>
+  </body>
+</html>
