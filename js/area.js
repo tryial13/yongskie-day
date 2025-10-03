@@ -127,9 +127,9 @@ function showDialogue(index) {
   if (line.event === "openModal") {
     const m = line.modal;
     if (m.video) {
-      openModal(m.title, `/assets/${m.video}`, "video");
+      openModal(m.title, `assets/${m.video}`, "video");
     } else if (m.image) {
-      openModal(m.title, `/assets/${m.image}`, "image");
+      openModal(m.title, `assets/${m.image}`, "image");
     }
   } else if (line.event === "completeTheMission") {
     completeTheMission(line.missionIndex);
@@ -251,9 +251,9 @@ function openModal(title, src, type = "video", subtitle = "") {
     };
 
     // === Audio ===
-    const correctSfx = new Audio("/assets/store/correct.mp3");
-    const wrongSfx   = new Audio("/assets/store/wrong.mp3");
-    const tenseSfx   = new Audio("/assets/store/tense.mp3");
+    const correctSfx = new Audio("assets/store/correct.mp3");
+    const wrongSfx   = new Audio("assets/store/wrong.mp3");
+    const tenseSfx   = new Audio("assets/store/tense.mp3");
 
     tenseSfx.loop = true;
     tenseSfx.volume = 0.6;
@@ -422,22 +422,22 @@ if (nextBtn) {
     // Alternate character image depending on area
     if (character && currentArea === "bakery") {
       character.src = (dialogueIndex % 2 === 0)
-        ? "/assets/bakery/baker-a-clean.png"
-        : "/assets/bakery/baker-b-clean.png";
+        ? "assets/bakery/baker-a-clean.png"
+        : "assets/bakery/baker-b-clean.png";
 
     } else if (character && currentArea === "store") {
       character.src = (dialogueIndex % 2 === 0)
-        ? "/assets/store/store-owner-a-clean.png"
-        : "/assets/store/store-owner-b-clean.png";
+        ? "assets/store/store-owner-a-clean.png"
+        : "assets/store/store-owner-b-clean.png";
 
     } else if (character && currentArea === "post-office") {
       character.src = (dialogueIndex % 2 === 0)
-        ? "/assets/post-office/mail-man-a-clean.png"
-        : "/assets/post-office/mail-man-b-clean.png";
+        ? "assets/post-office/mail-man-a-clean.png"
+        : "assets/post-office/mail-man-b-clean.png";
     } else if (character && currentArea === "snordax-house") {
       character.src = (dialogueIndex % 2 === 0)
-        ? "/assets/snordax-house/jigglyap-a-clean.png"
-        : "/assets/snordax-house/jigglyap-b-clean.png";
+        ? "assets/snordax-house/jigglyap-a-clean.png"
+        : "assets/snordax-house/jigglyap-b-clean.png";
     }
 
     showDialogue(dialogueIndex);
@@ -462,7 +462,7 @@ document.addEventListener("DOMContentLoaded", () => {
 // ----------------- Typing Effect -----------------
 let typingInterval = null;
 let isTyping = false;
-const audio = new Audio("/assets/audio/talking-sound.mp3");
+const audio = new Audio("assets/audio/talking-sound.mp3");
 audio.loop = true; // ✅ make the sound loop
 
 export function typeWriter(text, callback) {
@@ -499,7 +499,7 @@ let birthdayMusic = null;
 
 function playBirthdaySong() {
   if (!birthdayMusic) {
-    birthdayMusic = new Audio("/assets/snordax-house/birthday-song.mp3");
+    birthdayMusic = new Audio("assets/snordax-house/birthday-song.mp3");
     birthdayMusic.loop = true;
     birthdayMusic.volume = 1;
   }
@@ -540,7 +540,7 @@ function showBirthdayEnding() {
   if (!cake) {
     cake = document.createElement("img");
     cake.id = "birthday-cake";
-    cake.src = "/assets/snordax-house/birthday-cake-a-clean.png";
+    cake.src = "assets/snordax-house/birthday-cake-a-clean.png";
     cake.style.position = "fixed";
     cake.style.left = "50%";
     cake.style.top = "50%";
@@ -554,8 +554,8 @@ function showBirthdayEnding() {
   let toggle = true;
   setInterval(() => {
     cake.src = toggle
-      ? "/assets/snordax-house/birthday-cake-a-clean.png"
-      : "/assets/snordax-house/birthday-cake-b-clean.png";
+      ? "assets/snordax-house/birthday-cake-a-clean.png"
+      : "assets/snordax-house/birthday-cake-b-clean.png";
     toggle = !toggle;
   }, 500);
 
