@@ -49,10 +49,10 @@ let mapHeight = 0;
 
 // Backgrounds
 const backgrounds = [
-  { src: "/assets/background/map-low-sun.png" }, 
-  { src: "/assets/background/map-day.png" }, 
-  { src: "/assets/background/map-low-sun.png" }, 
-  { src: "/assets/background/map-night.png" }, 
+  { src: "assets/background/map-low-sun.png" }, 
+  { src: "assets/background/map-day.png" }, 
+  { src: "assets/background/map-low-sun.png" }, 
+  { src: "assets/background/map-night.png" }, 
 ];
 
 nightMode = backgroundImg.src.includes("map-night");
@@ -1393,3 +1393,4 @@ if (exitBtn) {
     window.location.href = "index.html";
   });
 }
+
