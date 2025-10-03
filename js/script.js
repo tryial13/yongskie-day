@@ -49,10 +49,10 @@ let mapHeight = 0;
 
 // Backgrounds
 const backgrounds = [
-  { src: "assets/background/map-low-sun.png" },
-  { src: "assets/background/map-day.png" },
-  { src: "assets/background/map-low-sun.png" },
-  { src: "assets/background/map-night.png" },
+  { src: "../assets/background/map-low-sun.png" },
+  { src: "../assets/background/map-day.png" },
+  { src: "../assets/background/map-low-sun.png" },
+  { src: "../assets/background/map-night.png" },
 ];
 
 nightMode = backgroundImg.src.includes("map-night");
@@ -62,7 +62,7 @@ const collisionCanvas = document.createElement("canvas");
 const collisionCtx = collisionCanvas.getContext("2d", { willReadFrequently: true });
 
 let collisionImg = new Image();
-collisionImg.src = "assets/background/map-col.png"; // white = land, black = ocean
+collisionImg.src = "../assets/background/map-col.png"; // white = land, black = ocean
 
 import { gameMissionsCompletionStatus, missionRequirements, accessibleAreasByMission,setCurrentMissionIndex, gameMissions, advanceMission,currentMissionIndex, jigglyap, updateJigglyap, drawJigglyap, jigglyapDialogue, drawJigglyapDialogue, jigglyapRandomMessages, getCurrentMission, startJigglyapTypewriter, advanceJigglyapDialogue, completedMissions, loadJigglyapFrames, displayedRandomMessages } from './game.js';
 
@@ -99,14 +99,14 @@ let stepCycle = 0;
 
 // 🎵 Snorlax Sound Effects
 const sounds = {
-  walk: new Audio("assets/audio/walk-sound.mp3"),
-  hurt: new Audio("assets/audio/hurt-sound.mp3"),
-  eat: new Audio("assets/audio/eat-sound.mp3"),
-  snore: new Audio("assets/audio/snore-sound.mp3"),
-  hungry: new Audio("assets/audio/hungry-sound.mp3")
+  walk: new Audio("../assets/audio/walk-sound.mp3"),
+  hurt: new Audio("../assets/audio/hurt-sound.mp3"),
+  eat: new Audio("../assets/audio/eat-sound.mp3"),
+  snore: new Audio("../assets/audio/snore-sound.mp3"),
+  hungry: new Audio("../assets/audio/hungry-sound.mp3")
 };
 
-const missionSuccessSound = new Audio("assets/audio/mission-success.mp3");
+const missionSuccessSound = new Audio("../assets/audio/mission-success.mp3");
 
 // Loop settings for continuous sounds
 sounds.walk.loop = true;
@@ -163,7 +163,7 @@ const itemFiles = [
 const itemImages = {};
 itemFiles.forEach(file => {
   const img = new Image();
-  img.src = `assets/items/${file}`;
+  img.src = `../assets/items/${file}`;
   itemImages[file] = img;
 });
 
@@ -177,7 +177,7 @@ const cloudFiles = ["cloud-a-clean.png", "cloud-b-clean.png"];
 const cloudImages = {};
 cloudFiles.forEach(file => {
   const img = new Image();
-  img.src = `assets/cloud/${file}`;
+  img.src = `../assets/cloud/${file}`;
   cloudImages[file] = img;
 });
 
@@ -252,7 +252,7 @@ window.addEventListener("keyup", (e) => (keys[e.key] = false));
 function loadFrames(files, targetArray) {
   files.forEach((file) => {
     const img = new Image();
-    img.src = `assets/snorlax/${file}`;
+    img.src = `../assets/snorlax/${file}`;
     targetArray.push(img);
   });
 }
@@ -1351,10 +1351,10 @@ window.onload = () => {
 };
 
 const cursorImg = new Image();
-cursorImg.src = "assets/ui/cursor-clean.png"; 
+cursorImg.src = "../assets/ui/cursor-clean.png"; 
 
 const cursor = document.createElement("img");
-cursor.src = "assets/ui/cursor-clean.png";
+cursor.src = "../assets/ui/cursor-clean.png";
 cursor.style.position = "fixed";
 cursor.style.pointerEvents = "none"; // important! so it doesn't block clicks
 cursor.style.zIndex = "9999"; // always on top
@@ -1393,6 +1393,3 @@ if (exitBtn) {
     window.location.href = "index.html";
   });
 }
-
-
-
